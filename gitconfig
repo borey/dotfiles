@@ -1,0 +1,37 @@
+[user]
+  name = Borey
+  email = lim.borey@gmail.com
+
+[color]
+  ui = true
+
+[alias]
+  serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+  aa = add -A
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  dc = diff --cached
+  l = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --color -n 20
+  lg = log --graph --decorate --pretty=oneline --abbrev-commit --all --color
+  lgp = log -p
+  ls = ls-file
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  cleanup = remote prune
+
+[core]
+  excludesfile = /Users/samnang/.gitignore_global
+  editor = /usr/bin/vim
+
+[github]
+  user = borey
+  token =
+
+[merge]
+  tool = vimdiff
+[push]
+	default = simple
+[heroku]
+	account = personal
