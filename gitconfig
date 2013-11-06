@@ -22,7 +22,6 @@
   cleanup = remote prune
 
 [core]
-  excludesfile = /Users/samnang/.gitignore_global
   editor = /usr/bin/vim
 
 [github]
