@@ -1,0 +1,38 @@
+# @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
+# Shamelessly copied from https://github.com/gf3/dotfiles
+# Screenshot: http://i.imgur.com/s0Blh.png
+
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+  export TERM=gnome-256color
+  elif infocmp xterm-256colorcolor >/dev/null 2>&1; then
+  export TERM=xterm-256color
+fi
+
+
+#export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+#export PS2="\[$ORANGE\]→ \[$RESET\]""]"
+
+function prompt {
+  local LIGHT_RED="\[\033[1;31m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local NO_COLOUR="\[\033[0m\]"
+  local PURPLE="\[\033[1;35m\]"
+  local WHITE="\[\033[1;37m\]"
+
+  local TITLEBAR='\[\033]0;\u@\h\007\]'
+
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  export GIT_PS1_SHOWUNTRACKEDFILES=true
+  export GIT_PS1_SHOWUPSTREAM=auto
+  export GIT_PS1_SHOWSTASHSTATE=true
+
+  rvmv='$(rvm-prompt i v p)'
+
+  PS1="$TITLEBAR$WHITE\u $LIGHT_GREEN\w/$PURPLE\$(__git_ps1 ' (%s)') $LIGHT_RED${rvmv}$NO_COLOUR$ "
+}
+
+#call the prompt function to set things in motion
+prompt
+
+source ~/.git-prompt.sh
+source ~/.git-completion.bash

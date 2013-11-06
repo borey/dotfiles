@@ -12,6 +12,7 @@ ln -s ~/.dotfiles/gvimrc ~/.gvimrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/bash_profile ~/.bash_profile
+ln -s ~/.dotfiles/bash_prompt ~/.bash_prompt
 ln -s ~/.dotfiles/irbrc ~/.irbrc
 ln -s ~/.dotfiles/gemrc ~/.gemrc
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
