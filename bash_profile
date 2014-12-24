@@ -1,9 +1,9 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
 fi
 
 ## taken from: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile
-for file in ~/.{path,bash_prompt,bashrc,exports,aliases,functions,extra}; do
+for file in ~/.{path,bash_prompt,bashrc,exports,bash_aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -36,3 +36,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+source /Users/boreylim/.rvm/scripts/rvm

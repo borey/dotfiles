@@ -20,6 +20,10 @@ alias r=rails
 alias z=zeus
 
 # Custom alias
-alias work='cd /Volumes/Documents/Copy/Work/'
+alias work='cd ~/workspace'
+alias yp='cd /var/www/yoolk_portal'
+alias yko='cd /var/www/yoolk_office'
+alias ykom='cd /var/www/yoolk_office_mobile'
+
 
 alias rmigrate='rake db:migrate && rake db:test:prepare'
