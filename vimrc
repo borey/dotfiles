@@ -42,6 +42,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 Bundle 'rking/ag.vim'
+Bundle 'elzr/vim-json'
 
 " *********************************************
 " *                 Settings                  *
