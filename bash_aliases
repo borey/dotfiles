@@ -27,3 +27,5 @@ alias ykom='cd /var/www/yoolk_office_mobile'
 
 
 alias rmigrate='rake db:migrate && rake db:test:prepare'
+
+alias http_server='python -m SimpleHTTPServer'

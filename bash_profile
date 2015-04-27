@@ -3,7 +3,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 ## taken from: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile
-for file in ~/.{path,bash_prompt,bashrc,exports,bash_aliases,functions,extra}; do
+for file in ~/.{path,profile,bash_prompt,bashrc,exports,bash_aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -37,3 +37,10 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 source /Users/boreylim/.rvm/scripts/rvm
+
+export ANDROID_HOME=~/opt/android-sdk-macosx/
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+
+#hub alias git
+eval "$(hub alias -s)"

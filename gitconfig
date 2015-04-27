@@ -23,6 +23,7 @@
 
 [core]
   editor = /usr/bin/vim
+	autocrtl = input
 
 [github]
   user = borey
@@ -30,8 +31,9 @@
 
 [merge]
   tool = vimdiff
-	ff = only
 [push]
 	default = simple
 [heroku]
 	account = personal
+[rerere]
+	enable = true
