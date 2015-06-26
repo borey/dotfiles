@@ -22,7 +22,7 @@
   cleanup = remote prune
 
 [core]
-  editor = /usr/bin/vim
+	editor = vim
 	autocrtl = input
 
 [github]
