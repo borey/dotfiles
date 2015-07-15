@@ -28,7 +28,7 @@ function prompt {
 
   rvmv='$(rvm-prompt i v p)'
 
-  PS1="$TITLEBAR$WHITE\u $LIGHT_GREEN\w/$PURPLE\$(__git_ps1 ' (%s)') $LIGHT_RED${rvmv}$NO_COLOUR$ "
+  PS1="\n$TITLEBAR$WHITE\u $LIGHT_GREEN\w/$PURPLE\$(__git_ps1 ' (%s)') $LIGHT_RED${rvmv}$NO_COLOUR$ "
 }
 
 #call the prompt function to set things in motion
