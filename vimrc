@@ -45,7 +45,7 @@ Bundle 'rking/ag.vim'
 Bundle 'elzr/vim-json'
 
 "color
-Bundle 'noah/vim256-color'
+Bundle 'borey/vim256-color'
 " *********************************************
 " *                 Settings                  *
 " *********************************************
@@ -106,7 +106,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 set t_Co=256                      " Set terminal to 256 colors
 set background=dark
-colorscheme flattown
+colorscheme jellybeans
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
