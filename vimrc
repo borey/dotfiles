@@ -41,8 +41,10 @@ Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'rking/ag.vim'
 Bundle 'elzr/vim-json'
+Bundle 'marijnh/tern_for_vim'
 
 "color
 Bundle 'borey/vim256-color'
@@ -106,7 +108,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 set t_Co=256                      " Set terminal to 256 colors
 set background=dark
-colorscheme last256
+colorscheme wells-colors
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
@@ -284,6 +286,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 highlight clear SignColumn
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+
+"javascript library syntax
+let g:used_javascript_libs = 'underscore,angularjs,jquery,jasmine'
 
 " *********************************************
 " *        Local Vimrc Customization          *
