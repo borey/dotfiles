@@ -1,3 +1,4 @@
 #!/bin/bash
 
-brew install coreutils
+brew update
+brew install coreutils curl git the_silver_searcher npm

@@ -18,13 +18,16 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'msanders/snipmate.vim'
+
+" install ultisnips
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/IndexedSearch'
-Bundle 'vim-scripts/L9.git'
+"Bundle 'vim-scripts/L9.git'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/AutoTag'
 Bundle 'godlygeek/tabular'
@@ -34,6 +37,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-expand-region'
 Bundle 'git://gist.github.com/287147.git'
 Bundle 't9md/vim-ruby-xmpfilter'
+Bundle 'bling/vim-airline'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-cucumber'
@@ -45,6 +49,8 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'rking/ag.vim'
 Bundle 'elzr/vim-json'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'wookiehangover/jshint.vim'
+Bundle 'burnettk/vim-angular'
 
 "color
 Bundle 'borey/vim256-color'
@@ -108,7 +114,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 set t_Co=256                      " Set terminal to 256 colors
 set background=dark
-colorscheme wells-colors
+colorscheme lilypink
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
@@ -274,6 +280,16 @@ imap <buffer> <F4> <Plug>(xmpfilter-mark)
 
 nnoremap <F1> :call ToggleFocusMode()<cr>
 
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
 " *********************************************
 " *           Plugin Customization            *
 " *********************************************
@@ -289,6 +305,9 @@ let g:gitgutter_eager = 0
 
 "javascript library syntax
 let g:used_javascript_libs = 'underscore,angularjs,jquery,jasmine'
+
+" configure airline
+"let g:airline#extensions#tabline#enabled = 1
 
 " *********************************************
 " *        Local Vimrc Customization          *
