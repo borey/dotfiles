@@ -27,6 +27,7 @@ alias ykom='cd /var/www/yoolk_office_mobile'
 alias ykw='cd /var/www/yoolk-website'
 alias yka='cd /var/www/yoolk_rest_api'
 alias yki='cd /var/www/yoolk_instant_website'
+alias ykc='cd /var/www/yoolk-config'
 
 
 alias rmigrate='rake db:migrate && rake db:test:prepare'

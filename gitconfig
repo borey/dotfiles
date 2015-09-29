@@ -2,9 +2,6 @@
   name = Borey
   email = lim.borey@gmail.com
 
-[color]
-  ui = true
-
 [alias]
   serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
   aa = add -A
@@ -24,6 +21,8 @@
 [core]
 	editor = vim
 	autocrtl = input
+  # insanely beautiful diffs
+  pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
 
 [github]
   user = borey
@@ -37,3 +36,27 @@
 	account = personal
 [rerere]
 	enable = true
+
+[color]
+  ui = always
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"

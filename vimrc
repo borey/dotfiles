@@ -21,13 +21,14 @@ Bundle 'ctrlpvim/ctrlp.vim'
 
 " install ultisnips
 Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+"Bundle 'honza/vim-snippets'
+
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/IndexedSearch'
-"Bundle 'vim-scripts/L9.git'
+Bundle 'vim-scripts/L9.git'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'vim-scripts/AutoTag'
 Bundle 'godlygeek/tabular'
@@ -40,7 +41,6 @@ Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'bling/vim-airline'
 
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -50,7 +50,7 @@ Bundle 'rking/ag.vim'
 Bundle 'elzr/vim-json'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'wookiehangover/jshint.vim'
-Bundle 'burnettk/vim-angular'
+"Bundle 'burnettk/vim-angular'
 
 "color
 Bundle 'borey/vim256-color'
@@ -59,7 +59,7 @@ Bundle 'borey/vim256-color'
 " *********************************************
 set encoding=utf-8
 syntax enable
-filetype plugin indent on         " load file type plugins + indentation
+"filetype plugin indent on         " load file type plugins + indentation
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -122,19 +122,6 @@ autocmd BufRead,BufNewFile *.thor set filetype=ruby
 " *********************************************
 " *                 Functions                 *
 " *********************************************
-
-" Find Cucumber's unused steps
-command! CucumberFindUnusedSteps :call CucumberFindUnusedSteps()
-function! CucumberFindUnusedSteps()
-  let olderrorformat = &l:errorformat
-  try
-    set errorformat=%m#\ %f:%l
-    cexpr system('bundle exec cucumber --no-profile --no-color --format usage --dry-run features \| grep "NOT MATCHED BY ANY STEPS" -B1 \| egrep -v "(--\|NOT MATCHED BY ANY STEPS)"')
-    cwindow
-  finally
-    let &l:errorformat = olderrorformat
-  endtry
-endfunction
 
 " Ack current word in command mode
 function! AckGrep(word)
@@ -259,7 +246,6 @@ let g:vroom_map_keys = 0
 let g:vroom_use_bundle_exec = 0
 silent! map <unique> <Leader>t :VroomRunTestFile<CR>
 silent! map <unique> <Leader>T :VroomRunNearestTest<CR>
-silent! map <unique> <Leader>w :!bundle exec cucumber --profile=wip<CR>
 
 nnoremap <silent> <F9> :TagbarToggle<CR>
 
@@ -299,13 +285,19 @@ let g:used_javascript_libs = 'underscore,angularjs,jquery,jasmine'
 
 " YouCompleteMe and UltiSnips compatibility, with the helper of supertab
 " (via http://stackoverflow.com/a/22253548/1626737)
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+"let g:SuperTabDefaultCompletionType    = '<C-n>'
+"let g:SuperTabCrMapping                = 0
+"let g:UltiSnipsExpandTrigger           = '<tab>'
+"let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+"let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+" json config
+"let g:vim_json_syntax_conceal = 1
+
+" JSHint config
+let JSHintUpdateWriteOnly=0
 
 " *********************************************
 " *        Local Vimrc Customization          *

@@ -12,6 +12,8 @@ ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/gvimrc ~/.gvimrc
 ln -s ~/.dotfiles/jshintrc ~/.jshintrc
 
+ln -s ~/.dotfiles/functions ~/.functions
+
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/gemrc ~/.gemrc
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig

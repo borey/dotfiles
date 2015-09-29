@@ -41,6 +41,7 @@ source /Users/boreylim/.rvm/scripts/rvm
 export ANDROID_HOME=~/opt/android-sdk-macosx/
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
+ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
 
 #hub alias git
 eval "$(hub alias -s)"
