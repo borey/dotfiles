@@ -21,7 +21,7 @@ Bundle 'ctrlpvim/ctrlp.vim'
 
 " install ultisnips
 Bundle 'SirVer/ultisnips'
-"Bundle 'honza/vim-snippets'
+Bundle 'honza/vim-snippets'
 
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter'
@@ -50,7 +50,7 @@ Bundle 'rking/ag.vim'
 Bundle 'elzr/vim-json'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'wookiehangover/jshint.vim'
-"Bundle 'burnettk/vim-angular'
+Bundle 'burnettk/vim-angular'
 
 "color
 Bundle 'borey/vim256-color'
@@ -114,7 +114,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 set t_Co=256                      " Set terminal to 256 colors
 set background=dark
-colorscheme lilypink
+colorscheme Tomorrow-Night-Bright
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
@@ -217,8 +217,8 @@ imap <C-l> <Space>=><Space>
 map <leader>: :%s/:\(\w\+\)\(\s*=>\s*\)/\1: /gc<CR>
 
 " indent/unindent visual mode selection with tab/shift+tab
-vmap <tab> >gv
-vmap <s-tab> <gv
+"vmap <tab> >gv
+"vmap <s-tab> <gv
 
 " F7 reformats the whole file and leaves you where you were (unlike gg)
 map <silent> <F7> mzgg=G'z :delmarks z<CR>:echo "Reformatted."<CR>
@@ -285,11 +285,11 @@ let g:used_javascript_libs = 'underscore,angularjs,jquery,jasmine'
 
 " YouCompleteMe and UltiSnips compatibility, with the helper of supertab
 " (via http://stackoverflow.com/a/22253548/1626737)
-"let g:SuperTabDefaultCompletionType    = '<C-n>'
-"let g:SuperTabCrMapping                = 0
-"let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
 "let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-"let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
