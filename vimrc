@@ -13,13 +13,15 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-liquid'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
 
 " install ultisnips
+Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
@@ -41,6 +43,7 @@ Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'bling/vim-airline'
 
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'ngmy/vim-rubocop'
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -48,8 +51,7 @@ Bundle 'othree/html5.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'rking/ag.vim'
 Bundle 'elzr/vim-json'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'wookiehangover/jshint.vim'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'burnettk/vim-angular'
 
 "color
@@ -114,7 +116,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 set t_Co=256                      " Set terminal to 256 colors
 set background=dark
-colorscheme Tomorrow-Night-Bright
+colorscheme badwolf
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
@@ -217,8 +219,8 @@ imap <C-l> <Space>=><Space>
 map <leader>: :%s/:\(\w\+\)\(\s*=>\s*\)/\1: /gc<CR>
 
 " indent/unindent visual mode selection with tab/shift+tab
-"vmap <tab> >gv
-"vmap <s-tab> <gv
+vmap <tab> >gv
+vmap <s-tab> <gv
 
 " F7 reformats the whole file and leaves you where you were (unlike gg)
 map <silent> <F7> mzgg=G'z :delmarks z<CR>:echo "Reformatted."<CR>
@@ -285,19 +287,29 @@ let g:used_javascript_libs = 'underscore,angularjs,jquery,jasmine'
 
 " YouCompleteMe and UltiSnips compatibility, with the helper of supertab
 " (via http://stackoverflow.com/a/22253548/1626737)
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-"let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " json config
 "let g:vim_json_syntax_conceal = 1
 
-" JSHint config
-let JSHintUpdateWriteOnly=0
+" Synstastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 5
 
 " *********************************************
 " *        Local Vimrc Customization          *
