@@ -2,7 +2,8 @@ if has("mouse")
   set mouse=a
 endif
 
-set guifont=Monaco:h18
+set guifont=Monaco:h13
+:set linespace=3
 set antialias                     " MacVim: smooth fonts.
 set guioptions-=T                 " Hide toolbar.
 set background=light              " Background.
