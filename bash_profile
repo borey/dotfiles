@@ -45,3 +45,4 @@ ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /
 
 #hub alias git
 eval "$(hub alias -s)"
+export PATH="/usr/local/sbin:$PATH"
