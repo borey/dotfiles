@@ -3,7 +3,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 ## taken from: https://github.com/mathiasbynens/dotfiles/blob/master/.bash_profile
-for file in ~/.{path,profile,bash_prompt,bashrc,exports,bash_aliases,functions,extra}; do
+for file in ~/.{path,profile,bash_prompt,bashrc,exports,bash_aliases,functions,extra,git-prompt.sh}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -46,3 +46,5 @@ ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /
 #hub alias git
 eval "$(hub alias -s)"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"

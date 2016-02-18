@@ -7,16 +7,19 @@ curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~
 
 git clone git://github.com/borey/dotfiles.git ~/.dotfiles
 
-ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/gvimrc ~/.gvimrc
-ln -s ~/.dotfiles/jshintrc ~/.jshintrc
+ln -sf ~/.dotfiles/bash_profile ~/.bash_profile
+ln -sf ~/.dotfiles/bash_prompt ~/.bash_prompt
+ln -sf ~/.dotfiles/bash_aliases ~/.bash_aliases
+ln -sf ~/.dotfiles/vim ~/.vim
+ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
+ln -sf ~/.dotfiles/jshintrc ~/.jshintrc
 
-ln -s ~/.dotfiles/functions ~/.functions
+ln -sf ~/.dotfiles/functions ~/.functions
 
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/gemrc ~/.gemrc
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/ackrc ~/.ackrc
+ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/gemrc ~/.gemrc
+ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/ackrc ~/.ackrc
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
