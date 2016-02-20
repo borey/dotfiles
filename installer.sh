@@ -23,3 +23,5 @@ ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/ackrc ~/.ackrc
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+./app_install.sh

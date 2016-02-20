@@ -19,6 +19,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-liquid'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'tpope/vim-commentary'
 
 " install ultisnips
 Bundle 'ervandew/supertab'
@@ -41,6 +42,10 @@ Bundle 'terryma/vim-expand-region'
 Bundle 'git://gist.github.com/287147.git'
 Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'bling/vim-airline'
+Bundle 'amix/open_file_under_cursor.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'junegunn/goyo.vim'
+Bundle 'tpope/vim-repeat'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'ngmy/vim-rubocop'
@@ -53,6 +58,9 @@ Bundle 'rking/ag.vim'
 Bundle 'elzr/vim-json'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'burnettk/vim-angular'
+Bundle 'tpope/vim-markdown'
+
+Bundle 'vim-scripts/nginx.vim'
 
 "color
 Bundle 'borey/vim256-color'
@@ -332,6 +340,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
+
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["haml", "scss", "sass"] }
 
 " *********************************************
 " *        Local Vimrc Customization          *
