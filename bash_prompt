@@ -14,7 +14,7 @@ fi
 
 function prompt {
   local LIGHT_RED="\[\033[1;31m\]"
-  local LIGHT_GREEN="\[\033[1;32m\]"
+  local LIGHT_BLUE="\[\033[1;34m\]"
   local NO_COLOUR="\[\033[0m\]"
   local PURPLE="\[\033[1;35m\]"
   local WHITE="\[\033[1;37m\]"
@@ -28,7 +28,7 @@ function prompt {
 
   rvmv='$(rvm-prompt i v p)'
 
-  PS1="\n$TITLEBAR$WHITE\u $LIGHT_GREEN\w/$PURPLE\$(__git_ps1 ' (%s)') $LIGHT_RED${rvmv}$NO_COLOUR$ "
+  PS1="\n$TITLEBAR$WHITE\u $LIGHT_BLUE\w/$PURPLE\$(__git_ps1 ' (%s)') $LIGHT_RED${rvmv}$NO_COLOUR$ "
 }
 
 #call the prompt function to set things in motion
