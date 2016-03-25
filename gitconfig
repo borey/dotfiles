@@ -19,8 +19,8 @@
   cleanup = remote prune
 
 [core]
-	editor = vim
-	autocrtl = input
+  editor = vim
+  autocrtl = input
   # insanely beautiful diffs
   pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
 
@@ -31,11 +31,11 @@
 [merge]
   tool = vimdiff
 [push]
-	default = simple
+  default = simple
 [heroku]
-	account = personal
+  account = personal
 [rerere]
-	enable = true
+  enable = true
 
 [color]
   ui = always

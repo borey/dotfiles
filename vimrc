@@ -27,7 +27,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdcommenter'
+" Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/IndexedSearch'
@@ -61,6 +61,8 @@ Bundle 'burnettk/vim-angular'
 Bundle 'tpope/vim-markdown'
 
 Bundle 'vim-scripts/nginx.vim'
+
+Bundle 'mxw/vim-jsx'
 
 "color
 Bundle 'borey/vim256-color'
