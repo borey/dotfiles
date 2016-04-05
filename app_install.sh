@@ -8,3 +8,4 @@ brew install Caskroom/cask/vlc
 brew install Caskroom/cask/skype
 brew install Caskroom/cask/gimp
 brew install Caskroom/cask/macdown
+brew install Caskroom/cask/genymotion
