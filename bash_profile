@@ -38,8 +38,10 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 source /Users/boreylim/.rvm/scripts/rvm
 
-export ANDROID_HOME=~/opt/android-sdk-macosx/
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_HOME=~/Library/Android/sdk
+# Your exact string here may be different.
+PATH="~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:${PATH}"
+export PATH
 
 ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" /usr/local/bin/diff-highlight
 
