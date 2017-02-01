@@ -23,7 +23,7 @@ Bundle 'tpope/vim-commentary'
 
 " install ultisnips
 Bundle 'ervandew/supertab'
-Bundle 'SirVer/ultisnips'
+" Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 
 Bundle 'Valloric/YouCompleteMe'
@@ -54,7 +54,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'rking/ag.vim'
+" Bundle 'rking/ag.vim'
+Bundle 'mileszs/ack.vim'
 Bundle 'elzr/vim-json'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'burnettk/vim-angular'
@@ -136,6 +137,11 @@ autocmd BufRead,BufNewFile *.js.erb set filetype=eruby.javascript
 autocmd BufRead,BufNewFile *.css.erb set filetype=eruby.css
 autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
 autocmd BufRead,BufNewFile *.js.haml set filetype=haml.javascript
+autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 " *********************************************
 " *                 Functions                 *
@@ -284,6 +290,8 @@ imap <buffer> <F4> <Plug>(xmpfilter-mark)
 
 nnoremap <F1> :call ToggleFocusMode()<cr>
 
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " *********************************************
 " *           Plugin Customization            *
