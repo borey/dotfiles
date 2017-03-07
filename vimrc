@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-bundler'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-liquid'
@@ -62,6 +62,13 @@ Bundle 'burnettk/vim-angular'
 Bundle 'tpope/vim-markdown'
 
 Bundle 'vim-scripts/nginx.vim'
+
+" typescript and angular
+Bundle 'leafgarland/typescript-vim'
+Bundle 'Quramy/vim-js-pretty-template'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Quramy/tsuquyomi'
+Bundle 'bdauria/angular-cli.vim'
 
 Bundle 'mxw/vim-jsx'
 
@@ -126,8 +133,8 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 set t_Co=256                      " Set terminal to 256 colors
+colorscheme monokai
 set background=dark
-colorscheme colorsbox-material
 
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
@@ -139,6 +146,14 @@ autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
 autocmd BufRead,BufNewFile *.js.haml set filetype=haml.javascript
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it for commit messages, when the position is invalid, or when
+" inside an event handler (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -338,6 +353,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " json config
 "let g:vim_json_syntax_conceal = 1
 
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
 " Synstastic config
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -350,10 +369,22 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "passive_filetypes": ["haml", "scss", "sass"] }
+
+" typscript setting
+" For typescript vim
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+" for js prettery template
+autocmd FileType typescript JsPreTmpl markdown
+autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vim users only. Please see #1 for details.
 
 " *********************************************
 " *        Local Vimrc Customization          *
