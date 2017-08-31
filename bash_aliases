@@ -21,7 +21,7 @@ alias z=zeus
 
 # Custom alias
 alias work='cd ~/workspace'
-alias yp='cd /var/www/yoolk_portal'
+alias yp='cd /var/www/yoolk-portal'
 alias yko='cd /var/www/yoolk_office'
 alias ykom='cd /var/www/yoolk_office_mobile'
 alias ykoa='cd /var/www/yoolk_office_api'

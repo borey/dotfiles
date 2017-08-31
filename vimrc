@@ -367,7 +367,7 @@ autocmd FileType eruby.javascript let b:syntastic_checkers = findfile('.jscsrc',
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_loc_list_height = 5
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
@@ -385,6 +385,8 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " for js prettery template
 autocmd FileType typescript JsPreTmpl markdown
 autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vim users only. Please see #1 for details.
+
+let macvim_skip_colorscheme = 1
 
 " *********************************************
 " *        Local Vimrc Customization          *
