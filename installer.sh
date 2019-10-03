@@ -1,27 +1,29 @@
 #!/bin/bash
 
-./brew.sh
+brew install curl git the_silver_searcher zsh zsh-completions
+chsh -s $(which zsh) # chsh -s /bin/zsh
 
-wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
-wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 
 git clone git://github.com/borey/dotfiles.git ~/.dotfiles
 
-ln -sf ~/.dotfiles/bash_profile ~/.bash_profile
-ln -sf ~/.dotfiles/bash_prompt ~/.bash_prompt
-ln -sf ~/.dotfiles/bash_aliases ~/.bash_aliases
-ln -sf ~/.dotfiles/vim ~/.vim
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
-ln -sf ~/.dotfiles/jshintrc ~/.jshintrc
+ln -f -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s ~/.dotfiles/aliases ~/.aliases
 
-ln -sf ~/.dotfiles/functions ~/.functions
+ln -s ~/.dotfiles/vim ~/.vim
+ln -s ~/.dotfiles/vimrc ~/.vimrc
 
-ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/gemrc ~/.gemrc
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/ackrc ~/.ackrc
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/gemrc ~/.gemrc
+ln -s ~/.dotfiles/irbrc ~/.irbrc
+ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/.dotfiles/ctags ~/.ctags
+ln -s ~/.dotfiles/ackrc ~/.ackrc
+ln -s ~/.dotfiles/agignore ~/.agignore
+ln -s ~/.dotfiles/gitmessage ~/.gitmessage
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
-./app_install.sh
+vim +PlugInstall +qall

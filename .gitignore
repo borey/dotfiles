@@ -1,4 +1,4 @@
-*DS_Store*
-vim/vim
-vim/Bundle/*
-dump.rdb
+*~
+*.swp
+.netrwhist
+vim/bundle/

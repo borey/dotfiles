@@ -1,6 +1,9 @@
 [user]
-  name = Borey
+  name = Borey Lim
   email = lim.borey@gmail.com
+[github]
+  user = borey
+  token =
 
 [alias]
   serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
@@ -13,21 +16,23 @@
   dc = diff --cached
   l = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --color -n 20
   lg = log --graph --decorate --pretty=oneline --abbrev-commit --all --color
+  lga = log --all --graph --decorate --oneline --simplify-by-decoration
   lgp = log -p
   ls = ls-file
   graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags'"
   cleanup = remote prune
 
 [core]
   editor = vim
   autocrtl = input
-  # insanely beautiful diffs
-  pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
+  excludesfile = /Users/borey/.gitignore_global
 
 [github]
   user = borey
   token =
-
+[pager]
+  diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 [merge]
   tool = vimdiff
 [push]
@@ -36,27 +41,9 @@
   account = personal
 [rerere]
   enable = true
-
 [color]
-  ui = always
-
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-
-[color "diff-highlight"]
-  oldNormal = "red bold"
-  oldHighlight = "red bold 52"
-  newNormal = "green bold"
-  newHighlight = "green bold 22"
+  ui = true
+[diff-so-fancy]
+	markEmptyLines = false
+[credential]
+	helper = osxkeychain
