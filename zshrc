@@ -71,7 +71,6 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/Dropbox/Apps/tmuxifier-layouts"
 eval "$(tmuxifier init -)"
 
 eval "$(hub alias -s)"
-eval "$(direnv hook zsh)"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,6 +101,8 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+export LC_ALL=en_US.UTF-8
 
 #########################
 # Plugins Customization #

@@ -2,7 +2,7 @@
 " *               Vim Plugins                 *
 " *********************************************
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 
 Plug 'gmarik/vundle'
 Plug 'tpope/vim-rails'
