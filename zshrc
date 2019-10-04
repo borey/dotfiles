@@ -104,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 
 export LC_ALL=en_US.UTF-8
 
+source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+
+
 #########################
 # Plugins Customization #
 #########################
@@ -122,7 +125,7 @@ export SPACESHIP_PROMPT_ORDER=(
   git             # Git section (git_branch + git_status)
   # hg            # Mercurial section (hg_branch  + hg_status)
   # package       # Package version
-  # node          # Node.js section
+  node          # Node.js section
   ruby            # Ruby section
   # elixir        # Elixir section
   # xcode         # Xcode section
@@ -132,7 +135,7 @@ export SPACESHIP_PROMPT_ORDER=(
   # rust          # Rust section
   # haskell       # Haskell Stack section
   # julia         # Julia section
-  # docker        # Docker section
+  docker        # Docker section
   # aws           # Amazon Web Services section
   # venv          # virtualenv section
   # conda         # conda virtualenv section
