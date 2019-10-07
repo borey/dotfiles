@@ -72,6 +72,14 @@ eval "$(tmuxifier init -)"
 
 eval "$(hub alias -s)"
 
+eval "$(rbenv init -)"
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -152,3 +160,6 @@ export SPACESHIP_PROMPT_ORDER=(
   exit_code       # Exit code section
   char            # Prompt character
 )
+export PATH="/usr/local/opt/mongodb-community@3.2/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
