@@ -328,6 +328,10 @@ let g:airline_theme='onedark'
 " gist-vim
 let g:gist_post_private = 1
 
+" nerdcommenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+
 " ale (syntax checker)
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1

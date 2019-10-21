@@ -66,10 +66,6 @@ export EDITOR="nvim"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-export TMUXIFIER_LAYOUT_PATH="$HOME/Dropbox/Apps/tmuxifier-layouts"
-eval "$(tmuxifier init -)"
-
 eval "$(hub alias -s)"
 
 eval "$(rbenv init -)"
@@ -80,8 +76,10 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+
 source $ZSH/oh-my-zsh.sh
 
+source ~/.bin/tmuxinator.zsh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
