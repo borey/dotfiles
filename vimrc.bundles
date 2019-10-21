@@ -34,7 +34,6 @@ Plug 'rizzatti/dash.vim'
 Plug 'mattn/emmet-vim'
 Plug 'bogado/file-line'
 Plug 'romainl/vim-qf'
-Plug 'slashmili/alchemist.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
@@ -47,5 +46,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'kristijanhusak/vim-carbon-now-sh'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leshill/vim-json'
+
+Plug 'danilo-augusto/vim-afterglow'
 
 call plug#end()
