@@ -243,6 +243,11 @@ if has('nvim')
   tmap <C-o> <C-\><C-n>
 end
 
+if !empty(glob("docker-compose.yml"))
+  let test#ruby#rspec#executable = 'docker exec -it spring rspec'
+  " let test#ruby#rspec#executable = 'docker-compose run --rm web bundle exec rspec'
+end
+
 "Run Ruby code analyzer
 let g:vimrubocop_keymap = 0
 map <leader><leader> :RuboCop<cr>
