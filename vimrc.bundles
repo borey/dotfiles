@@ -53,5 +53,6 @@ Plug 'leshill/vim-json'
 
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'prettier/vim-prettier'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()

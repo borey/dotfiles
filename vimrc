@@ -61,6 +61,8 @@ set nowritebackup                 " And again.
 set noswapfile                    " no swap files
 set directory=/tmp                " Keep swap files in one location
 set timeoutlen=500
+set cmdheight=2                   " Better display for messages
+set updatetime=300                " You will have bad experience for diagnostic messages when it's default 4000.
 
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
@@ -142,7 +144,7 @@ function! InsertTabWrapper()
     if !col || getline('.')[col - 1] !~ '\k'
         return "\<tab>"
     else
-        return "\<c-p>"
+        return "\<c-n>"
     endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
